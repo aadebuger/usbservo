@@ -6,15 +6,17 @@ Created on 2017年7月15日
 '''
 import serial
 def testservo1():
-    serial.Serial() as ser:
-        ser.baudrate = 9600
-        ser.bytesize=8
-        ser.stopbits=1
-        ser.parity=PARTY_NONE
-        ser.port = '/dev/ttyUSB0'
-        ser.open()
-        ser.write(b'#1P1500T100\r\n')
-        ser.close()
+    ser = serial.Serial(
+        port='/dev/ttyUSB0',
+        baudrate=9600,
+        parity=serial.PARITY_NONE,
+        stopbits=serial.STOPBITS_ONE,
+        bytesize=serial.EIGHTBITS
+    )
+
+    print(ser.name)  
+    ser.write(b'#1P1500T100\r\n')
+    ser.close()
     
 def testservo():
         ser = serial.Serial('/dev/ttyUSB0') 
