@@ -7,8 +7,8 @@ use_plugin("python.flake8")
 use_plugin("python.coverage")
 use_plugin("python.distutils")
 
-use_plugin("python.pydev")
 use_plugin("python.pycharm")
+use_plugin("python.pydev")
 name = "usbservo"
 default_task = "publish"
 
